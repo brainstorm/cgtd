@@ -9,6 +9,6 @@ services:
   ipfs:
     image: ipfs/go-ipfs:latest
     ports:
-      - "8081:8081"
-      - "4002:4002"
-      - "4003:4003/udp"
+      - "8080:8080"
+      - "4001:4001"
+      - "4002:4002/udp"
