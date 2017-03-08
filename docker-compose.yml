@@ -1,13 +1,9 @@
 version: '2'
-
-volumes:
-  ipfs:
-
 services:
   ipfs:
-    image: ipfs/go-ipfs:release
-    volumes:
-      - ipfs:/data/ipfs
+    image: brainstorm/ipfs-cluster:latest
+    volumes: 
+      - ./data:/data/ipfs
     ports:
       - "8080:8080"
       - "4001:4001"
