@@ -14,6 +14,9 @@ stop:
 clean:
 	sudo rm -rf data/*
 
+ecs:
+	docker run -i --rm micahhausler/container-transform < docker-compose.yml > ecs-deploy.json
+
 ipfs:
 	# Initializing local IPFS daemon and data directory (if not present already)..."
 	if [ -d "data" ]; then \

@@ -33,7 +33,21 @@ storage and replication and ipns for address resolution and public/private key
 operations.  The server is implemented using python and [flask]
 (http://flask.pocoo.org/)
 
-# Running a Production Instance
+# Running locally with docker-compose
+
+
+	docker-compose up
+	docker-compose scale ipfs=3
+
+# Running a production instance on Amazon ECS
+	
+Following the [official docker amazon ecs-cli instructions](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_CLI_installation.html):
+
+	ecs-cli configure --region ap-southeast-2 --cluster cgtd-aus
+	ecs-cli up --keypair mba_wwcrc --capability-iam --size 1 --instance-type t2.medium
+	ecs-cli compose up
+
+# Running locally with make
 
 Note: The only dependencies for the following is make and docker.
 

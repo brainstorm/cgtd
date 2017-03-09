@@ -1,0 +1,68 @@
+{
+    "containerDefinitions": [
+        {
+            "environment": [
+                {
+                    "name": "DOMAIN",
+                    "value": "None"
+                }
+            ],
+            "essential": true,
+            "image": "ga4gh/cgtd",
+            "links": [
+                "ipfs"
+            ],
+            "memory": 512,
+            "name": "cgtd",
+            "portMappings": [
+                {
+                    "containerPort": 5000,
+                    "hostPort": 5000
+                }
+            ]
+        },
+        {
+            "essential": true,
+            "image": "brainstorm/ipfs-cluster:latest",
+            "memory": 512,
+            "mountPoints": [
+                {
+                    "containerPath": "/data/ipfs",
+                    "sourceVolume": "Data"
+                }
+            ],
+            "name": "ipfs",
+            "portMappings": [
+                {
+                    "containerPort": 8080,
+                    "hostPort": 8080
+                },
+                {
+                    "containerPort": 4001,
+                    "hostPort": 4001
+                },
+                {
+                    "containerPort": 9094,
+                    "hostPort": 9094
+                },
+                {
+                    "containerPort": 9095,
+                    "hostPort": 9095
+                },
+                {
+                    "containerPort": 9096,
+                    "hostPort": 9096
+                }
+            ]
+        }
+    ],
+    "family": "",
+    "volumes": [
+        {
+            "host": {
+                "sourcePath": "data"
+            },
+            "name": "Data"
+        }
+    ]
+}

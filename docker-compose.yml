@@ -2,14 +2,19 @@ version: '2'
 services:
   ipfs:
     image: brainstorm/ipfs-cluster:latest
+    mem_limit: 512m
     volumes: 
-      - ./data:/data/ipfs
+      - data:/data/ipfs
     ports:
       - "8080:8080"
       - "4001:4001"
+      - "9094:9094"
+      - "9095:9095"
+      - "9096:9096"
 
   cgtd:
     image: ga4gh/cgtd
+    mem_limit: 512m
     environment:
       DOMAIN:
     ports:
