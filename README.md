@@ -43,7 +43,7 @@ operations.  The server is implemented using python and [flask]
 	
 Following the [official docker amazon ecs-cli instructions](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_CLI_installation.html):
 
-	ecs-cli configure --region ap-southeast-2 --cluster cgtd-aus
+	ecs-cli configure --region ap-southeast-2 --access-key $AWS_ACCESS_KEY_ID --secret-key $AWS_SECRET_ACCESS_KEY --cluster cgtd-aus
 	ecs-cli up --keypair mba_wwcrc --capability-iam --size 1 --instance-type t2.medium
 	ecs-cli compose up
 
