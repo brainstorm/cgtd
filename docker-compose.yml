@@ -1,7 +1,7 @@
 version: '2'
 services:
   ipfs:
-    image: brainstorm/ipfs-cluster:latest
+    image: ipfs/ipfs-cluster:latest
     mem_limit: 512m
     volumes: 
       - data:/data/ipfs
