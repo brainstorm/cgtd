@@ -4,7 +4,7 @@ services:
     image: ipfs/ipfs-cluster:latest
     mem_limit: 512m
     volumes: 
-      - data:/data/ipfs
+      - data:/tmp
     ports:
       - "8080:8080"
       - "4001:4001"
@@ -21,3 +21,6 @@ services:
       - "5000:5000"
     links:
       - ipfs
+    labels:
+        kompose.service.type: nodeport
+        kompose.service.expose: "unimelb.edu.au.cancergenetrust.org"
