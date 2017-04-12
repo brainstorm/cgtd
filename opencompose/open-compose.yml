@@ -4,9 +4,7 @@ services:
       containers:
       - image: ipfs/ipfs-cluster:latest
         ports:
-          - port: 8080
-            type: external
-          - port: 4001
+          - port: 5001
           - port: 9094
           - port: 9095
           - port: 9096
