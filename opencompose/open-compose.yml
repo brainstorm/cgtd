@@ -1,0 +1,17 @@
+version: 0.1-dev
+services:
+    - name: ipfs
+      containers:
+      - image: ipfs/ipfs-cluster:latest
+        ports:
+          - port: 8080
+          - port: 4001
+          - port: 9094
+          - port: 9095
+          - port: 9096
+
+    - name: cgtd
+      containers:
+        - image: ga4gh/cgtd
+          ports:
+            - port: 5000

@@ -33,6 +33,20 @@ storage and replication and ipns for address resolution and public/private key
 operations.  The server is implemented using python and [flask]
 (http://flask.pocoo.org/)
 
+# Deploying on kubernetes with opencompose or kompose
+
+	Still alpha stage, but in principle it should support a pre-allocated elastic IP.
+
+	opencompose -f opencompose/open-compose.yml
+	kubectl -f *.yml
+
+	or
+
+	Works a treat, but does not support ExternalIP, which is needed to link the cgtd service to
+	an existing EIP (as in AWS Elastic IP):
+
+	kompose up
+
 # Running locally with docker-compose
 
 
