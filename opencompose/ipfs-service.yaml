@@ -7,12 +7,9 @@ metadata:
   name: ipfs
 spec:
   ports:
-  - name: port-8080
-    port: 8080
-    targetPort: 8080
-  - name: port-4001
-    port: 4001
-    targetPort: 4001
+  - name: port-5001
+    port: 5001
+    targetPort: 5001
   - name: port-9094
     port: 9094
     targetPort: 9094

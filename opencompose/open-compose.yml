@@ -1,6 +1,6 @@
 version: 0.1-dev
 services:
-    - name: ipfs
+    - name: ipfs-cluster
       containers:
       - image: ipfs/ipfs-cluster:latest
         ports:
@@ -8,9 +8,9 @@ services:
           - port: 9094
           - port: 9095
           - port: 9096
-        mounts:
-            - volumeName: ipfs-data
-              mountPath: $HOME/data
+#        mounts:
+#            - volumeName: ipfs-data
+#              mountPath: $HOME/data
 
     - name: cgtd
       containers:
