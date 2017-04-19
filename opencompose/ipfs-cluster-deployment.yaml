@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    service: ipfs
-  name: ipfs
+    service: ipfs-cluster
+  name: ipfs-cluster
 spec:
   strategy:
     type: RollingUpdate
@@ -12,11 +12,18 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        service: ipfs
+        service: ipfs-cluster
     spec:
+      volumes:
+      - name: ipfs-data-volume
+        hostPath:
+          path: /srv/ipfs
       containers:
       - image: ipfs/ipfs-cluster:latest
-        name: ipfs-0
+        name: ipfs-cluster-0
+        volumeMounts:
+        - mountPath: "/srv/ipfs"
+          name: ipfs-data-volume
         ports:
         - containerPort: 5001
           name: port-5001

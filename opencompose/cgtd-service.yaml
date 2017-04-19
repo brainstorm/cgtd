@@ -10,8 +10,6 @@ spec:
   - name: port-5000
     port: 5000
     targetPort: 5000
-  externalIPs:
-    - 52.64.16.69
   selector:
     service: cgtd
   type: LoadBalancer
